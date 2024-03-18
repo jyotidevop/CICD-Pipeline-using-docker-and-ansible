@@ -19,6 +19,7 @@
       service:
         name: docker
         state: started
+        
     #- name: create directory
      # file:
       #  path: /home/ubuntu/jyoti
@@ -28,7 +29,7 @@
         #state: directory
     #- name: copy the file to remot-server
      # shell: scp -r /var/lib/jenkins/workspace/myweb ubuntu@50.17.59.50:/home/ubuntu/jyoti
-    #- name: Build an image and push
+    - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
         source: build

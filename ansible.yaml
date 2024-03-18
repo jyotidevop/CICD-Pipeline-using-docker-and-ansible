@@ -15,10 +15,17 @@
       apt:
         name: docker.io
         state: present
+    - name: create directory
+      file:
+        path: /home/ubuntu/project
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'
+        state: directory
     - name: copy the file to remot-server
       copy:
         src: /var/lib/jenkins/workspace/website
-        path: ~/project
+        path: /home/ubuntu/project
         state: present
     - name: Start docker service
       service:

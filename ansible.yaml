@@ -21,19 +21,19 @@
         state: started
     - name: create directory
       file:
-        path: /home/ubuntu/project
+        path: /home/ubuntu/jyoti
         owner: ubuntu
         group: ubuntu
         mode: '0755'
         state: directory
     - name: copy the file to remot-server
-      shell: scp -r /var/lib/jenkins/workspace/website ubuntu@50.17.59.50:/home/ubuntu/project
+      shell: scp -r /var/lib/jenkins/workspace/myweb ubuntu@50.17.59.50:/home/ubuntu/jyoti
     - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
         source: build
         build:
-          path: ./website/
+          path: /home/ubuntu/jyoti
         state: present
 
     - name: Create container

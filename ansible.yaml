@@ -29,7 +29,7 @@
     - name: copy the file to remot-server
       copy:
         src: /var/lib/jenkins/workspace/website
-        path: /home/ubuntu/project
+        dest: /home/ubuntu/project
         state: present
     - name: Build an image and push
       docker_image:

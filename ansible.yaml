@@ -33,7 +33,7 @@
         name: jyotichaudhary90/web
         source: build
         build:
-          path: /home/ubuntu/jyoti
+          path: /var/lib/jenkins/workspace/myweb
         state: present
 
     - name: Create container

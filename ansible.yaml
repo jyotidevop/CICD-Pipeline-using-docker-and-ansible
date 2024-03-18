@@ -25,7 +25,7 @@
         name: jyotichaudhary90/web
         source: build
         build:
-          path: /var/lib/jenkins/workspace/website
+          path: ./website/
         state: present
 
     - name: Create container

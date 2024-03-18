@@ -15,7 +15,11 @@
       apt:
         name: docker.io
         state: present
-
+    - name: copy the file to remot-server
+      copy:
+        src: /var/lib/jenkins/workspace/website
+        path: ~/project
+        state: present
     - name: Start docker service
       service:
         name: docker

@@ -15,6 +15,10 @@
       apt:
         name: docker.io
         state: present
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
     - name: create directory
       file:
         path: /home/ubuntu/project
@@ -27,10 +31,6 @@
         src: /var/lib/jenkins/workspace/website
         path: /home/ubuntu/project
         state: present
-    - name: Start docker service
-      service:
-        name: docker
-        state: started
     - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
